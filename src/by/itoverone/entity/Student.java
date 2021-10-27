@@ -7,7 +7,6 @@ import java.util.Objects;
 public class Student extends Human {
     private String NameOfStudent;
     private String subject;
-    private String faculty;
     private Map<String, List<Integer>> marks;
 
     public Student(int id, String name, String gender, int age, String nameOfStudent, String subject, Map<String, List<Integer>> marks) {
