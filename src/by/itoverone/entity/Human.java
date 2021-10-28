@@ -8,7 +8,8 @@ public class Human {
     private String gender;
     private int age;
 
-    public Human() {
+    public Human(String name) {
+        this.name = name;
     }
 
     public Human(int id, String name, String gender, int age) {

@@ -9,13 +9,9 @@ public class Programmer extends Human {
     private String nameOfProgrammer;
 
 
-    public Programmer(int id, String name, String gender, int age) {
-        super(id, name, gender, age);
-    }
-
-    public Programmer(String language, String nameOfProgrammer) {
+    public Programmer(String name, String language) {
+        super(name);
         this.language = language;
-        this.nameOfProgrammer = nameOfProgrammer;
     }
 
     public String getLanguage() {

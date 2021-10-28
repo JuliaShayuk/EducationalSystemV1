@@ -17,7 +17,7 @@ public class StudentService {
 
         for (int i = 0; i < size; i++) {
             System.out.println("Enter a name: " + " ");
-            String nameOfStudent = sc.next();
+            String name = sc.next();
 
             System.out.println("Enter number of subjects: " + " ");
             int numSubject = sc.nextInt();
@@ -39,7 +39,7 @@ public class StudentService {
                 }
                 subjectAndMarks.put(subject, studentsMarks);
             }
-            studentsList.add(new Student(nameOfStudent, subjectAndMarks));
+            studentsList.add(new Student(name, subjectAndMarks));
 
         }
         return studentsList;
@@ -49,7 +49,7 @@ public class StudentService {
         List<Student> averageMarks = new ArrayList<>();
 
         for (Student st : students) {
-            Map<String, List<Integer>> marks = st.getMarks();
+            Map<String, List<Integer>> marks = st.getSubjectAndMarks();
             int sum = 0;
             int count = 0;
             for (Map.Entry<String, List<Integer>> pair : marks.entrySet()) {
@@ -61,10 +61,16 @@ public class StudentService {
                 count = count + subjectMarks.size();
             }
             int avg = sum / count;
+            if (avg > 7) {
+                averageMarks.add(st);
+            }
 
         }
+
         return averageMarks;
     }
+
+
 
     public static void printStudent(List<Student> students) {
         for (int i = 0; i < students.size(); i++) {

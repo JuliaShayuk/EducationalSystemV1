@@ -6,24 +6,20 @@ import java.util.Objects;
 
 public class Student extends Human {
 
-    private Map<String, List<Integer>> marks;
+    private Map<String, List<Integer>> subjectAndMarks;
 
-    public Student(int id, String name, String gender, int age, Map<String, List<Integer>> marks) {
-        super(id, name, gender, age);
-        this.marks = marks;
-    }
-
-    public Student(String nameOfStudent, Map<String, List<Integer>> subjectAndMarks) {
+    public Student(String name, Map<String, List<Integer>> subjectAndMarks) {
+        super(name);
+        this.subjectAndMarks = subjectAndMarks;
 
     }
 
-
-    public Map<String, List<Integer>> getMarks() {
-        return marks;
+    public Map<String, List<Integer>> getSubjectAndMarks() {
+        return subjectAndMarks;
     }
 
-    public void setMarks(Map<String, List<Integer>> marks) {
-        this.marks = marks;
+    public void setSubjectAndMarks(Map<String, List<Integer>> subjectAndMarks) {
+        this.subjectAndMarks = subjectAndMarks;
     }
 
     @Override
@@ -32,18 +28,18 @@ public class Student extends Human {
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Student student = (Student) o;
-        return marks.equals(student.marks);
+        return subjectAndMarks.equals(student.subjectAndMarks);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), marks);
+        return Objects.hash(super.hashCode(), subjectAndMarks);
     }
 
     @Override
     public String toString() {
         return "Student{" +
-                "marks=" + marks +
+                "subjectAndMarks=" + subjectAndMarks +
                 '}';
     }
 }
