@@ -16,8 +16,8 @@ public class Main {
        StudentService.printStudent(students);
 
 
-       List<Student> studentsWithAverageGrade = StudentService.getAverageGrade(students);
-        System.out.println("Average grade student list: " + " ");
+       List<Student> studentsWithAverageGrade = StudentService.getStudentWithAverageGradeMore7(students);
+        System.out.println("List of students with average mark more than 7 " + " ");
         StudentService.printStudent(studentsWithAverageGrade);
 
         List<Human> humans = HumanService.getHumans();

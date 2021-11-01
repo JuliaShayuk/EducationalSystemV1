@@ -45,14 +45,14 @@ public class StudentService {
         return studentsList;
     }
 
-    public static List<Student> getAverageGrade(List<Student> students) {
+    public static List<Student> getStudentWithAverageGradeMore7(List<Student> students) {
         List<Student> averageMarks = new ArrayList<>();
 
         for (Student st : students) {
-            Map<String, List<Integer>> marks = st.getSubjectAndMarks();
+            Map<String, List<Integer>> newAvgMarks = st.getSubjectAndMarks();
             int sum = 0;
             int count = 0;
-            for (Map.Entry<String, List<Integer>> pair : marks.entrySet()) {
+            for (Map.Entry<String, List<Integer>> pair : newAvgMarks.entrySet()) {
                 List<Integer> subjectMarks = pair.getValue();
 
                 for (int i = 0; i < subjectMarks.size(); i++) {
@@ -64,12 +64,10 @@ public class StudentService {
             if (avg > 7) {
                 averageMarks.add(st);
             }
-
         }
 
         return averageMarks;
     }
-
 
 
     public static void printStudent(List<Student> students) {
